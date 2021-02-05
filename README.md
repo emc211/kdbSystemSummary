@@ -9,5 +9,15 @@ for i in <lis_of_hosts> ; do sh tpSummary.sh ecunnin $i "/path/to/log/archive/" 
 #above files write to data/ now read in and provide stats 
 q summary.q
 
+#example output
+Daily Average size across all servers is: 98.3499 GB
+Monthly Average size across all servers is: 1615.748 GB
+The peak daily size is: 205.9168 GB
+Daily average uncompressed data from tplogs across all servers is: 163.2765 GB
+Monthly average uncompressed data from tplogs across all servers is: 2523.365 GB
+
+
 #to get server info cpus and ram
 for i in listofallhosts ; do echo $i ; ssh -o BatchMode=yes -q p_tic@$i "lscpu | grep '^CPU(s):' ; free -h | grep  Mem " ; done
+
+
