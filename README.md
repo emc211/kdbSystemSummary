@@ -8,3 +8,6 @@ for i in <lis_of_hosts> ; do sh tpSummary.sh ecunnin $i "/path/to/log/archive/" 
 
 #above files write to data/ now read in and provide stats 
 q summary.q
+
+#to get server info cpus and ram
+for i in listofallhosts ; do echo $i ; ssh -o BatchMode=yes -q p_tic@$i "lscpu | grep '^CPU(s):' ; free -h | grep  Mem " ; done
