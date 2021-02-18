@@ -18,6 +18,7 @@ Monthly average uncompressed data from tplogs across all servers is: 2523.365 GB
 
 
 #to get server info cpus and ram
-for i in listofallhosts ; do echo $i ; ssh -o BatchMode=yes -q p_tic@$i "lscpu | grep '^CPU(s):' ; free -h | grep  Mem " ; done
+listofallhosts="host 1 host2 host3"
+for i in $listofallhosts ; do echo $i ; ssh -o BatchMode=yes -q p_tic@$i "lscpu | grep '^CPU(s):' ; free -h | grep  Mem " ; done
 
 
